@@ -1,101 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Uganda Integrated Care Hub</title>
-  <meta name="description" content="Resource hub for health workers in Uganda on integrating HIV and chronic care into mainstream OPD." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322c55e'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='url(%23g)'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uganda Health Integration Hub - Integrated Care for Sustainable HIV Services</title>
+    <style>
+        /* Creative CSS: Clean, modern design with health-themed colors (greens for growth/healing, blues for trust) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4; /* Light green tint */
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #2c5aa0, #007bff); /* Blue gradient for trust and professionalism */
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+        nav {
+            background-color: #28a745; /* Green for action/growth */
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav li {
+            margin: 0 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #218838;
+        }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .hero {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .hero h2 {
+            color: #28a745;
+            font-size: 2em;
+        }
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .resource-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .resource-card h3 {
+            color: #2c5aa0;
+            margin-top: 0;
+        }
+        .resource-card p {
+            color: #666;
+        }
+        .download-btn, .view-btn {
+            display: inline-block;
+            margin: 0.5rem 0.25rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover, .view-btn:hover {
+            background-color: #218838;
+        }
+        .view-btn {
+            background-color: #007bff;
+        }
+        .view-btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            nav ul { flex-direction: column; }
+            .resources { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="brand">
-        <div class="logo"></div>
-        <div>
-          <div style="font-weight:800">Uganda Integrated Care Hub</div>
-          <small class="mono">A resource hub for health workers · OPD/Chronic Care Integration</small>
-        </div>
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#resources">Resources</a>
-        <a href="#toolkit">Toolkit</a>
-        <a href="#about">About</a>
-      </nav>
+    <header>
+        <h1>🌿 Uganda Health Integration Hub</h1>
+        <p>Empowering Health Workers for Sustainable, Integrated Care – Prioritizing Continuity of HIV Services</p>
     </header>
-
-    <section class="hero" data-view="home">
-      <h1>Advance integrated care for sustainability and continuity of HIV services</h1>
-      <p>
-        Curated, official resources to integrate HIV, TB, Hepatitis, HTN/DM and other chronic care into mainstream OPD — aligned with MoH priorities.
-      </p>
-      <div class="search">
-        <input id="q" placeholder="Search documents by title… (e.g., Roadmap, Practical Guide)" aria-label="Search documents" />
-      </div>
-    </section>
-
-    <section class="section" data-view="resources" style="display:none">
-      <h2>Official Resources</h2>
-      <p class="muted">Read online or download. These are the core national documents for integration.</p>
-      <div class="grid"></div>
-    </section>
-
-    <section class="section" data-view="toolkit" style="display:none">
-      <h2>Implementation Toolkit</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Clinic Flow (Integrated OPD & Chronic Care)</h3>
-          <p>Use this high-level patient-flow to reorganize OPD and chronic care clinics: triage ⟶ assessment ⟶ integrated management ⟶ labs/pharmacy ⟶ CQI & follow-up.</p>
-          <div class="actions">
-            <a class="badge" href="#resources">Open resources</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Mentorship & Training</h3>
-          <p>10‑day facility package + ToT: governance, acute care, chronic care, laboratory, HMIS, CQI, and community DSD models.</p>
-          <div class="actions">
-            <a class="badge" href="docs/Final_Facility_Level_Facilitators_Guide.pdf" target="_blank">Facilitator’s Guide</a>
-            <a class="badge" href="docs/Capacity_Development_Plan_for_Integration.pdf" target="_blank">Curriculum</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Governance, Roadmap & Maturity</h3>
-          <p>HSSI Roadmap + SIMF maturity framework to plan, sequence and track integration across levels.</p>
-          <div class="actions">
-            <a class="badge" target="_blank" href="docs/Draft_HSSI_Roadmap_2.3_August_5th.pdf">Roadmap</a>
-            <a class="badge" target="_blank" href="docs/Integration_Maturity_Framework_10_Jun_25.pdf">SIMF</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" data-view="about" style="display:none">
-      <h2>About</h2>
-      <p>
-        This open resource hub curates key Ministry of Health documents to assist facilities, districts and implementing partners in operationalizing integrated care within Uganda’s Primary Health Care platform.
-        Host it on GitHub Pages, share with teams, and contribute improvements via pull requests.
-      </p>
-      <div class="card">
-        <h3>Deploy on GitHub Pages</h3>
-        <ol>
-          <li>Create a public GitHub repo (e.g., <em>uganda-integrated-care</em>).</li>
-          <li>Upload all files including the <code>docs/</code> PDFs.</li>
-          <li>Go to <strong>Settings → Pages</strong>, set “Deploy from branch”, pick <strong>main</strong> and <strong>root</strong> (or use a <code>docs/</code> folder).</li>
-          <li>Your site will be live at <code>https://&lt;username&gt;.github.io/uganda-integrated-care/</code>.</li>
-        </ol>
-      </div>
-    </section>
-
-    <footer class="footer">
-      Built with ❤ for Uganda’s health workers · CC‑BY 4.0.  Feedback? Open an issue in your repo.
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to the Resource Hub for Integrated Health Services</h2>
+            <p>In line with the Ministry of Health's vision for Universal Health Coverage (UHC), this hub supports health workers in Uganda to advance integrated care. Focus on seamless service delivery for HIV, TB, NCDs, and more – ensuring sustainability, efficiency, and patient-centered outcomes. Access guidelines, training plans, and frameworks to implement integrated models at facility and community levels.</p>
+            <p><em>Built for frontline heroes: Download, read, and transform care delivery today.</em></p>
+        </section>
+        
+        <section id="resources">
+            <h2 style="text-align: center; color: #28a745;">Key Resources from the Ministry of Health</h2>
+            <div class="resources">
+                <div class="resource-card">
+                    <h3>Capacity Development Plan for Provision of Integrated Health Services’ Delivery</h3>
+                    <p>March 2025 | Version 1.0 – Structured training curriculum to equip workers for integrated PHC, aligned with NHPIII and UHC goals.</p>
+                    <a href="Capacity Development Plan for Integration.pdf" class="download-btn" download>📥 Download PDF</a>
+                    <a href="Capacity Development Plan for Integration.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Final Facility Level Facilitator's Guide</h3>
+                    <p>July 2025 | Version 2.0 – Practical guide for facility trainings on integration principles, simulations, and modules for acute/chronic care.</p>
+                    <a href="Final Facility Level Facilitator's Guide.pdf" class="download-btn" download>📥 Download PDF</a>
+                    <a href="Final Facility Level Facilitator's Guide.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Integration Maturity Framework</h3>
+                    <p>June 2025 – Diagnostic tool to assess and advance health system integration across levels, supporting resilient service delivery.</p>
+                    <a href="Integration Maturity Framework 10 Jun 25.pdf" class="download-btn" download>📥 Download PDF</a>
+                    <a href="Integration Maturity Framework 10 Jun 25.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Practical Guidance for Integration (MoH Uganda)</h3>
+                    <p>April 2025 | Final Version – Operationalizing integrated services in facilities, consolidating HIV/TB/NCDs into patient-centered models.</p>
+                    <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="download-btn" download>📥 Download PDF</a>
+                    <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Integration Situation Analysis Report</h3>
+                    <p>May 2025 – Comprehensive review of Uganda's health integration history, challenges, and pathways to PHC strengthening.</p>
+                    <a href="Integration situation analysis 3.1.pdf" class="download-btn" download>📥 Download PDF</a>
+                    <a href="Integration situation analysis 3.1.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Draft HSSI Roadmap</h3>
+                    <p>August 2025 | Version 2.3 – Phased strategy for health services integration, from stabilization to transformation for UHC.</p>
+                    <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="download-btn" download>📥 Download PDF</a>
+                    <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about" style="background: white; padding: 2rem; border-radius: 10px; margin-top: 2rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h2>About This Hub</h2>
+            <p>This GitHub Pages site serves as a centralized, accessible resource for Ugandan health workers to support the MoH's integration priorities. It emphasizes sustainability in HIV care by linking vertical programs to holistic PHC. Future updates may include interactive tools, forums, and more.</p>
+        </section>
+        
+        <section id="contact" style="text-align: center; margin-top: 2rem;">
+            <h2>Get Involved</h2>
+            <p>For feedback or contributions, email <a href="mailto:healthintegrationug@gmail.com">healthintegrationug@gmail.com</a> or star/fork this repo on GitHub.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Uganda Health Integration Hub | Powered by GitHub Pages | In Partnership with Ministry of Health</p>
     </footer>
-  </div>
-
-  <script src="assets/app.js"></script>
+    
+    <script>
+        // Simple smooth scrolling for nav links
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
