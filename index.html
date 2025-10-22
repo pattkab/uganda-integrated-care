@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uganda Integrated Care Hub</title>
+  <meta name="description" content="Resource hub for health workers in Uganda on integrating HIV and chronic care into mainstream OPD." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322c55e'/%3E%3Cstop offset='1' stop-color='%230ea5e9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='18' fill='url(%23g)'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div style="font-weight:800">Uganda Integrated Care Hub</div>
+          <small class="mono">A resource hub for health workers · OPD/Chronic Care Integration</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#resources">Resources</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <section class="hero" data-view="home">
+      <h1>Advance integrated care for sustainability and continuity of HIV services</h1>
+      <p>
+        Curated, official resources to integrate HIV, TB, Hepatitis, HTN/DM and other chronic care into mainstream OPD — aligned with MoH priorities.
+      </p>
+      <div class="search">
+        <input id="q" placeholder="Search documents by title… (e.g., Roadmap, Practical Guide)" aria-label="Search documents" />
+      </div>
+    </section>
+
+    <section class="section" data-view="resources" style="display:none">
+      <h2>Official Resources</h2>
+      <p class="muted">Read online or download. These are the core national documents for integration.</p>
+      <div class="grid"></div>
+    </section>
+
+    <section class="section" data-view="toolkit" style="display:none">
+      <h2>Implementation Toolkit</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Clinic Flow (Integrated OPD & Chronic Care)</h3>
+          <p>Use this high-level patient-flow to reorganize OPD and chronic care clinics: triage ⟶ assessment ⟶ integrated management ⟶ labs/pharmacy ⟶ CQI & follow-up.</p>
+          <div class="actions">
+            <a class="badge" href="#resources">Open resources</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Mentorship & Training</h3>
+          <p>10‑day facility package + ToT: governance, acute care, chronic care, laboratory, HMIS, CQI, and community DSD models.</p>
+          <div class="actions">
+            <a class="badge" href="docs/Final_Facility_Level_Facilitators_Guide.pdf" target="_blank">Facilitator’s Guide</a>
+            <a class="badge" href="docs/Capacity_Development_Plan_for_Integration.pdf" target="_blank">Curriculum</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Governance, Roadmap & Maturity</h3>
+          <p>HSSI Roadmap + SIMF maturity framework to plan, sequence and track integration across levels.</p>
+          <div class="actions">
+            <a class="badge" target="_blank" href="docs/Draft_HSSI_Roadmap_2.3_August_5th.pdf">Roadmap</a>
+            <a class="badge" target="_blank" href="docs/Integration_Maturity_Framework_10_Jun_25.pdf">SIMF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-view="about" style="display:none">
+      <h2>About</h2>
+      <p>
+        This open resource hub curates key Ministry of Health documents to assist facilities, districts and implementing partners in operationalizing integrated care within Uganda’s Primary Health Care platform.
+        Host it on GitHub Pages, share with teams, and contribute improvements via pull requests.
+      </p>
+      <div class="card">
+        <h3>Deploy on GitHub Pages</h3>
+        <ol>
+          <li>Create a public GitHub repo (e.g., <em>uganda-integrated-care</em>).</li>
+          <li>Upload all files including the <code>docs/</code> PDFs.</li>
+          <li>Go to <strong>Settings → Pages</strong>, set “Deploy from branch”, pick <strong>main</strong> and <strong>root</strong> (or use a <code>docs/</code> folder).</li>
+          <li>Your site will be live at <code>https://&lt;username&gt;.github.io/uganda-integrated-care/</code>.</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer class="footer">
+      Built with ❤ for Uganda’s health workers · CC‑BY 4.0.  Feedback? Open an issue in your repo.
+    </footer>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
