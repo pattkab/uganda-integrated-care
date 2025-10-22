@@ -19,7 +19,7 @@
             color: white;
             padding: 1rem 1.5rem; /* Further reduced padding for mobile */
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15); /* Enhanced shadow for header */
         }
         header h1 {
             margin: 0 0 0.25rem 0; /* Further reduced margin */
@@ -76,7 +76,7 @@
             background: white;
             padding: 1.5rem; /* Reduced from 2rem */
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12); /* Enhanced shadow for hero */
             margin-bottom: 0.75rem; /* Reduced */
         }
         .hero h2 {
@@ -92,7 +92,7 @@
             background: linear-gradient(135deg, #fff3cd, #ffeaa7); /* Warm yellow/orange for urgency/alerts */
             padding: 0.75rem; /* Further reduced */
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12); /* Enhanced shadow */
             margin-bottom: 0.75rem; /* Reduced */
             text-align: center;
         }
@@ -111,7 +111,7 @@
             background: white;
             padding: 0.75rem; /* Reduced from 1rem for shorter height */
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12); /* Enhanced shadow for cards */
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: left;
             height: auto; /* Allow natural height, no forced 100% */
@@ -121,7 +121,7 @@
         }
         .announcement-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18); /* Stronger hover shadow */
         }
         .announcement-item img {
             max-width: 100%;
@@ -156,7 +156,9 @@
             text-decoration: underline;
         }
         .announcement-item .btn {
-            display: inline-block;
+            display: inline-flex; /* Changed to inline-flex for flexible width */
+            align-items: center;
+            justify-content: center;
             margin: 0.125rem 0.125rem 0 0; /* Further reduced */
             padding: 0.375rem 0.75rem; /* Smaller buttons for mobile touch */
             background-color: #007bff;
@@ -166,6 +168,9 @@
             font-weight: bold;
             transition: background-color 0.3s;
             font-size: 0.85em; /* Smaller button text */
+            flex: 1; /* Allow flexible growth */
+            min-width: 120px; /* Minimum width for usability */
+            max-width: 100%; /* Prevent overflow */
         }
         .announcement-item .btn:hover {
             background-color: #0056b3;
@@ -192,12 +197,12 @@
             background: white;
             padding: 0.75rem; /* Reduced from 1rem */
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12); /* Enhanced shadow for cards */
             transition: transform 0.3s, box-shadow 0.3s;
         }
         .resource-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18); /* Stronger hover shadow */
         }
         .resource-card h3 {
             color: #2c5aa0;
@@ -210,7 +215,9 @@
             font-size: 0.9em; /* Smaller descriptions */
         }
         .download-btn, .view-btn {
-            display: inline-block;
+            display: inline-flex; /* Changed to inline-flex for flexible width */
+            align-items: center;
+            justify-content: center;
             margin: 0.125rem 0.125rem 0 0; /* Further reduced */
             padding: 0.375rem 0.75rem; /* Smaller buttons */
             background-color: #28a745;
@@ -220,6 +227,9 @@
             font-weight: bold;
             transition: background-color 0.3s;
             font-size: 0.85em; /* Smaller text */
+            flex: 1; /* Allow flexible growth */
+            min-width: 120px; /* Minimum width for usability */
+            max-width: 100%; /* Prevent overflow */
         }
         .download-btn:hover, .view-btn:hover {
             background-color: #218838;
@@ -237,13 +247,14 @@
             padding: 0.5rem 0.75rem; /* Further reduced */
             margin-top: 0.75rem; /* Reduced */
             font-size: 0.9em;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.12); /* Added shadow to footer */
         }
         #about, #contact {
             background: white;
             padding: 0.75rem; /* Reduced from 1rem */
             border-radius: 10px;
             margin-top: 0.75rem; /* Reduced */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12); /* Enhanced shadow */
         }
         #about h2, #contact h2 {
             margin-bottom: 0.25rem;
@@ -270,16 +281,34 @@
             .btn, .download-btn, .view-btn { 
                 padding: 0.5rem 1rem; /* Slightly larger touch targets on mobile */
                 font-size: 0.9em; /* Readable button text */
-                min-width: 100%; /* Full width buttons for easy tapping */
+                min-width: 100%; /* Full width buttons for easy tapping on small screens */
                 margin: 0.25rem 0;
-                display: block; /* Stack buttons */
+                display: block; /* Stack buttons on very small screens */
                 text-align: center;
+                flex: none; /* Override flex for full width stacking */
+            }
+            .announcement-item .btn-group, .resource-card .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            .announcement-item .btn-group .btn,
+            .resource-card .btn-group .download-btn,
+            .resource-card .btn-group .view-btn {
+                display: inline-flex;
+                min-width: auto;
+                flex: 1 1 45%; /* Allow two buttons side-by-side if space allows */
+                max-width: none;
             }
         }
         @media (max-width: 480px) {
             body { font-size: 14px; } /* Base font reduction for tiny screens */
             header h1 { font-size: 1.5em; }
             .hero h2, .resources h2, .announcements h2, #about h2, #contact h2 { font-size: 1.125em; }
+            .btn, .download-btn, .view-btn {
+                flex: 1 1 100%; /* Force full width on tiniest screens */
+            }
         }
     </style>
 </head>
@@ -323,9 +352,13 @@
                     <p><strong>Date:</strong> Wednesday, October 22, 2025 | <strong>Time:</strong> 8:00 AM EAT<br>
                     <strong>Presenter:</strong> Dr. Bahizi Archibald, SEC for Fort Portal RRH<br>
                     Join us for insights on integrated health services implementation. Earn CPD points! DHOs: Mobilize at least 70 health workers per district.</p>
-                    <a href="https://us06web.zoom.us/j/88563151627?pwd=EYVa2w8RggN5kBTdhKcgcRqGy6S9ne.1" class="btn" target="_blank">📹 Join Zoom Webinar</a> (Meeting ID: 8856315627 | Passcode: 123)<br>
-                    <small>Scan QR code in poster or use link above.</small><br><br>
-                    <a href="presentation-tooro-region.pdf" class="btn btn-secondary" download>📄 Download Presentation (Available Post-Event)</a>
+                    <div class="btn-group">
+                        <a href="https://us06web.zoom.us/j/88563151627?pwd=EYVa2w8RggN5kBTdhKcgcRqGy6S9ne.1" class="btn" target="_blank">📹 Join Zoom Webinar</a> (Meeting ID: 8856315627 | Passcode: 123)<br>
+                        <small>Scan QR code in poster or use link above.</small>
+                    </div>
+                    <div class="btn-group">
+                        <a href="presentation-tooro-region.pdf" class="btn btn-secondary" download>📄 Download Presentation (Available Post-Event)</a>
+                    </div>
                 </div>
                  
                 <div class="announcement-item">
@@ -346,64 +379,82 @@
                 <div class="resource-card">
                     <h3>Standard Operating Procedures (SOPs)</h3>
                     <p>Integration SOPs | Simple "How-to" Guides for Health Workers.</p>
-                    <a href="Integration SOPs.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Integration SOPs.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Integration SOPs.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Integration SOPs.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                             
                 <div class="resource-card">  
                     <h3>Video CMEs</h3>
                     <p>Continuing Medical Education (CME) videos on integrated health service delivery.</p>
-                    <a href="https://www.youtube.com/@MoHUganda" class="view-btn" target="_blank">▶️ Watch on YouTube</a>
-                    <a href="https://www.youtube.com/@MoHUganda/playlists" class="download-btn" target="_blank">📺 View All CME Playlists</a>
+                    <div class="btn-group">
+                        <a href="https://www.youtube.com/@MoHUganda" class="view-btn" target="_blank">▶️ Watch on YouTube</a>
+                        <a href="https://www.youtube.com/@MoHUganda/playlists" class="download-btn" target="_blank">📺 View All CME Playlists</a>
+                    </div>
                 </div>
                              
                 <div class="resource-card">
                     <h3>Capacity Development Plan for Provision of Integrated Health Services’ Delivery</h3>
                     <p>March 2025 | Version 1.0 – Structured training curriculum to equip workers for integrated PHC, aligned with NHPIII and UHC goals.</p>
-                    <a href="Capacity Development Plan for Integration.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Capacity Development Plan for Integration.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Capacity Development Plan for Integration.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Capacity Development Plan for Integration.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                              
                 <div class="resource-card">
                     <h3>Final Facility Level Facilitator's Guide</h3>
                     <p>July 2025 | Version 2.0 – Practical guide for facility trainings on integration principles, simulations, and modules for acute/chronic care.</p>
-                    <a href="Final Facility Level Facilitator's Guide.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Final Facility Level Facilitator's Guide.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Final Facility Level Facilitator's Guide.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Final Facility Level Facilitator's Guide.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                              
                 <div class="resource-card">
                     <h3>Integration Maturity Framework</h3>
                     <p>June 2025 – Diagnostic tool to assess and advance health system integration across levels, supporting resilient service delivery.</p>
-                    <a href="Integration Maturity Framework 10 Jun 25.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Integration Maturity Framework 10 Jun 25.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Integration Maturity Framework 10 Jun 25.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Integration Maturity Framework 10 Jun 25.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                              
                 <div class="resource-card">
                     <h3>Practical Guidance for Integration (MoH Uganda)</h3>
                     <p>April 2025 | Final Version – Operationalizing integrated services in facilities, consolidating HIV/TB/NCDs into patient-centered models.</p>
-                    <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                              
                 <div class="resource-card">
                     <h3>Integration Situation Analysis Report</h3>
                     <p>May 2025 – Comprehensive review of Uganda's health integration history, challenges, and pathways to PHC strengthening.</p>
-                    <a href="Integration situation analysis 3.1.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Integration situation analysis 3.1.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Integration situation analysis 3.1.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Integration situation analysis 3.1.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                  
                 <div class="resource-card">
                     <h3>Uganda Clinical Guidelines 2023</h3>
                     <p>UCG 2023 – Guidelines for management of different diseases</p>
-                    <a href="UCG 2023.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="UCG 2023.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="UCG 2023.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="UCG 2023.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
                              
                 <div class="resource-card">
                     <h3>Draft HSSI Roadmap</h3>
                     <p>August 2025 | Version 2.3 – Phased strategy for health services integration, from stabilization to transformation for UHC.</p>
-                    <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    <div class="btn-group">
+                        <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="download-btn" download>📥 Download PDF</a>
+                        <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="view-btn" target="_blank">👁️ View Online</a>
+                    </div>
                 </div>
             </div>
         </section>
