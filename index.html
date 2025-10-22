@@ -1,403 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uganda Health Services Integration Resource Hub</title>
-    <style>
-        /* Creative CSS: Clean, modern design with health-themed colors (greens for growth/healing, blues for trust) */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f9f4; /* Light green tint */
-            color: #333;
-            line-height: 1.4; /* Reduced from 1.6 for tighter spacing */
-        }
-        header {
-            background: linear-gradient(135deg, #000000 0%, #FFD700 50%, #DC143C 100%); /* Blend of black, yellow, red for Uganda flag theme */
-            color: white;
-            padding: 1.5rem 2rem; /* Reduced padding */
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        header h1 {
-            margin: 0 0 0.5rem 0; /* Reduced margin */
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Enhanced shadow for legibility on gradient */
-        }
-        header img {
-            vertical-align: middle;
-            margin-right: 0.5rem;
-        }
-        header p {
-            font-size: 1.2em;
-            margin: 0;
-            opacity: 0.9;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* Added shadow for subtitle legibility */
-        }
-        nav {
-            background-color: #28a745; /* Green for action/growth */
-            padding: 0.75rem 1rem; /* Reduced padding */
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        nav li {
-            margin: 0 0.5rem; /* Reduced margin */
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        nav a:hover {
-            background-color: #218838;
-        }
-        main {
-            max-width: 1200px;
-            margin: 1rem auto; /* Reduced from 2rem */
-            padding: 0 1rem;
-        }
-        .hero {
-            text-align: center;
-            background: white;
-            padding: 2rem; /* Reduced from 3rem */
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 1rem; /* Reduced from 2rem */
-        }
-        .hero h2 {
-            color: #28a745;
-            font-size: 2em;
-            margin-bottom: 0.5rem; /* Added to tighten */
-        }
-        .hero p {
-            margin-bottom: 0.5rem; /* Reduced spacing between paragraphs */
-        }
-        .announcements {
-            background: linear-gradient(135deg, #fff3cd, #ffeaa7); /* Warm yellow/orange for urgency/alerts */
-            padding: 1rem; /* Reduced from 2rem */
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 1rem; /* Reduced from 2rem */
-            text-align: center;
-        }
-        .announcements h2 {
-            color: #856404;
-            margin: 0 0 0.5rem 0; /* Reduced margin */
-        }
-        .announcement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem; /* Reduced from 1.5rem */
-            margin-top: 0.5rem; /* Reduced from 1rem */
-        }
-        .announcement-item {
-            background: white;
-            padding: 1rem; /* Reduced from 1.5rem for shorter height */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: left;
-            height: auto; /* Allow natural height, no forced 100% */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .announcement-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-        .announcement-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            margin-bottom: 0.5rem; /* Reduced */
-        }
-        .announcement-item h3, .announcement-item h4 {
-            color: #2c5aa0;
-            margin: 0 0 0.5rem 0; /* Reduced */
-        }
-        .announcement-item p {
-            margin-bottom: 0.5rem; /* Reduced */
-        }
-        .announcement-item ul {
-            list-style: none;
-            padding: 0;
-            margin: 0.5rem 0; /* Reduced */
-        }
-        .announcement-item ul li {
-            margin-bottom: 0.25rem; /* Reduced */
-        }
-        .announcement-item ul li a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .announcement-item ul li a:hover {
-            text-decoration: underline;
-        }
-        .announcement-item .btn {
-            display: inline-block;
-            margin: 0.25rem 0.25rem 0 0; /* Reduced */
-            padding: 0.5rem 1rem; /* Reduced padding for buttons */
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 0.9em; /* Slightly smaller font */
-        }
-        .announcement-item .btn:hover {
-            background-color: #0056b3;
-        }
-        .announcement-item .btn-secondary {
-            background-color: #28a745;
-        }
-        .announcement-item .btn-secondary:hover {
-            background-color: #218838;
-        }
-        .resources {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem; /* Reduced from 1.5rem */
-            margin-top: 1rem; /* Reduced from 2rem */
-        }
-        .resources h2 {
-            margin-bottom: 0.5rem; /* Added to tighten */
-            text-align: center;
-            color: #28a745;
-        }
-        .resource-card {
-            background: white;
-            padding: 1rem; /* Reduced from 1.5rem */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .resource-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-        .resource-card h3 {
-            color: #2c5aa0;
-            margin: 0 0 0.5rem 0; /* Reduced */
-        }
-        .resource-card p {
-            color: #666;
-            margin-bottom: 0.5rem; /* Reduced */
-        }
-        .download-btn, .view-btn {
-            display: inline-block;
-            margin: 0.25rem 0.25rem 0 0; /* Reduced */
-            padding: 0.5rem 1rem; /* Reduced */
-            background-color: #28a745;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            font-size: 0.9em; /* Slightly smaller */
-        }
-        .download-btn:hover, .view-btn:hover {
-            background-color: #218838;
-        }
-        .view-btn {
-            background-color: #007bff;
-        }
-        .view-btn:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 0.75rem 1rem; /* Reduced */
-            margin-top: 1rem; /* Reduced from 3rem */
-        }
-        #about, #contact {
-            background: white;
-            padding: 1rem; /* Reduced from 2rem */
-            border-radius: 10px;
-            margin-top: 1rem; /* Reduced from 2rem */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        #about h2, #contact h2 {
-            margin-bottom: 0.5rem;
-        }
-        #about p, #contact p {
-            margin-bottom: 0.5rem;
-        }
-        @media (max-width: 768px) {
-            header h1 { font-size: 2em; }
-            nav ul { flex-direction: column; }
-            .resources, .announcement-grid { grid-template-columns: 1fr; }
-            header { padding: 1rem; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>
-            <img src="https://vectorflags.s3.amazonaws.com/flags/ug-circle-01.png" alt="Round Uganda Flag" style="width: 50px; height: 50px; border-radius: 50%; vertical-align: middle;">
-            Uganda Health Services Integration Resource Hub
-        </h1>
-        <p>Empowering Health Workers for Sustainable, Integrated Care – Prioritizing Continuity of HIV Services</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#announcements">Announcements</a></li>
-            <li><a href="#resources">Resources</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section id="home" class="hero">
-            <h2>Welcome to the Resource Hub for Integrated Health Services</h2>
-            <p>In line with the Ministry of Health’s vision for Sustainability and Universal Health Coverage (UHC), this hub equips Ugandan health workers to advance integrated care—linking HIV, TB, NCD, and other services for efficient, sustainable, and patient-centred outcomes. Access key guidelines, training materials, and frameworks to implement integrated models at facility and community levels.
-</p>
-            <p><em>Built for frontline heroes: Download, read, and transform care delivery today.</em></p>
-        </section>
-        
-        <section id="announcements" class="announcements">
-            <h2>🔔 Latest Announcements</h2>
-            <div class="announcement-grid">
-                <div class="announcement-item">
-                    <img src="Tooro Integration Webinar.jpg" alt="National Webinar Flyer: Learning and Adaptation Webinar Series on Integrated Health Services – Experiences from Tooro Region">
-                    <h4>Invitation to the Webinar</h4>
-                    <p>All health workers in Uganda are invited to attend the national webinar on integrated health services from Tooro Region.</p>
-                </div>
-                
-                <div class="announcement-item">
-                    <h3>National Webinar: Experiences from Tooro Region</h3>
-                    <p><strong>Date:</strong> Wednesday, October 22, 2025 | <strong>Time:</strong> 8:00 AM EAT<br>
-                    <strong>Presenter:</strong> Dr. Bahizi Archibald, SEC for Fort Portal RRH<br>
-                    Join us for insights on integrated health services implementation. Earn CPD points! DHOs: Mobilize at least 70 health workers per district.</p>
-                    <a href="https://us06web.zoom.us/j/88563151627?pwd=EYVa2w8RggN5kBTdhKcgcRqGy6S9ne.1" class="btn" target="_blank">📹 Join Zoom Webinar</a> (Meeting ID: 8856315627 | Passcode: 123)<br>
-                    <small>Scan QR code in poster or use link above.</small><br><br>
-                    <a href="presentation-tooro-region.pdf" class="btn btn-secondary" download>📄 Download Presentation (Available Post-Event)</a>
-                </div>
-                
-                <div class="announcement-item">
-                    <h3>Upcoming Events & Opportunities</h3>
-                    <p>Stay updated on training, mentorship, and more to advance your integrated care skills.</p>
-                    <ul>
-                        <li><a href="Final Facility Level Facilitator's Guide.pdf" target="_blank">Facility Level Training Guide</a> – Register for upcoming sessions via your DHO.</li>
-                        <li><a href="Capacity Development Plan for Integration.pdf" target="_blank">Mentorship & CME Programs</a> – Access structured support plans for ongoing professional development.</li>
-                        <li><a href="mailto:xpatt@live.com">Next Regional Workshop</a> – Inquire about upcoming opportunities to learn.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section id="resources">
-            <h2>Key Resources from the Ministry of Health</h2>
-            <div class="resources">
-                <div class="resource-card">
-                    <h3>Standard Operating Procedures (SOPs)</h3>
-                    <p>Integration SOPs | Simple "How-to" Guides for Health Workers.</p>
-                    <a href="Integration SOPs.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Integration SOPs.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-           
-                <div class="resource-card">
-  <h3>Video CMEs</h3>
-  <p>Continuing Medical Education (CME) videos on integrated health service delivery.</p>
-  <a href="https://www.youtube.com/@MoHUganda" class="view-btn" target="_blank">▶️ Watch on YouTube</a>
-  <a href="https://www.youtube.com/@MoHUganda/playlists" class="download-btn" target="_blank">📺 View All CME Playlists</a>
-</div>
-                
-                <div class="resource-card">
-                    <h3>Capacity Development Plan for Provision of Integrated Health Services’ Delivery</h3>
-                    <p>March 2025 | Version 1.0 – Structured training curriculum to equip workers for integrated PHC, aligned with NHPIII and UHC goals.</p>
-                    <a href="Capacity Development Plan for Integration.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Capacity Development Plan for Integration.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Final Facility Level Facilitator's Guide</h3>
-                    <p>July 2025 | Version 2.0 – Practical guide for facility trainings on integration principles, simulations, and modules for acute/chronic care.</p>
-                    <a href="Final Facility Level Facilitator's Guide.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Final Facility Level Facilitator's Guide.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Integration Maturity Framework</h3>
-                    <p>June 2025 – Diagnostic tool to assess and advance health system integration across levels, supporting resilient service delivery.</p>
-                    <a href="Integration Maturity Framework 10 Jun 25.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Integration Maturity Framework 10 Jun 25.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Practical Guidance for Integration (MoH Uganda)</h3>
-                    <p>April 2025 | Final Version – Operationalizing integrated services in facilities, consolidating HIV/TB/NCDs into patient-centered models.</p>
-                    <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Integration Situation Analysis Report</h3>
-                    <p>May 2025 – Comprehensive review of Uganda's health integration history, challenges, and pathways to PHC strengthening.</p>
-                    <a href="Integration situation analysis 3.1.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Integration situation analysis 3.1.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uganda Health Services Integration Resource Hub</title>
+  <style>
+    /* --- GLOBAL STYLES --- */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f9f4;
+      color: #333;
+      line-height: 1.5;
+    }
 
-                <div class="resource-card">
-                    <h3>Uganda Clinical Guidelines 2023</h3>
-                    <p>UCG 2023 – Guidelines for management of different diseases</p>
-                    <a href="UCG 2023.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="UCG 2023.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-                
-                <div class="resource-card">
-                    <h3>Draft HSSI Roadmap</h3>
-                    <p>August 2025 | Version 2.3 – Phased strategy for health services integration, from stabilization to transformation for UHC.</p>
-                    <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="download-btn" download>📥 Download PDF</a>
-                    <a href="Draft HSSI Roadmap 2.3 August 5th.pdf" class="view-btn" target="_blank">👁️ View Online</a>
-                </div>
-            </div>
-        </section>
-        
-        <section id="about">
-            <h2>About This Resource</h2>
-            <p>This site about Integration serves as a centralized, accessible resource for Ugandan health workers to support the MoH's integration roadmap. It emphasizes sustainability in HIV care by linking vertical programs to holistic PHC. Future updates will include interactive tools, forums, and more.</p>
-        </section>
-        
-        <section id="contact">
-            <h2>Get Involved</h2>
-            <p>For feedback or contributions, email <a href="mailto:xpatt@live.com">Xpatt</a> or WhatsApp the Integration Taskforce for QnAs.</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Uganda Health Services Integration Resource Hub | Powered by PMVL | In Partnership with MoH</p>
-    </footer>
-    
-    <script>
-        // Simple smooth scrolling for nav links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    a { color: #007bff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* --- HEADER --- */
+    header {
+      background: linear-gradient(135deg, #000000 0%, #FFD700 50%, #DC143C 100%);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      margin: 0.3rem 0;
+      text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    }
+
+    header img {
+      width: 45px;
+      height: 45px;
+      vertical-align: middle;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+    }
+
+    header p {
+      font-size: 1em;
+      opacity: 0.95;
+      margin: 0;
+    }
+
+    /* --- NAVIGATION --- */
+    nav {
+      background-color: #28a745;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav li { margin: 0.25rem 0.5rem; }
+
+    nav a {
+      color: white;
+      font-weight: 600;
+      font-size: 0.9em;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover { background-color: #1e7a38; }
+
+    /* --- MAIN CONTENT --- */
+    main {
+      max-width: 1100px;
+      margin: 0.5rem auto;
+      padding: 0 1rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 1.5em;
+      color: #2e7d32;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ANNOUNCEMENTS */
+    .announcements {
+      background: linear-gradient(135deg, #fffbe5, #fff3cd);
+      padding: 0.8rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .announcements h2 {
+      margin: 0 0 0.5rem;
+      color: #856404;
+    }
+
+    .announcement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .announcement-item {
+      background: white;
+      padding: 0.8rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+      text-align: left;
+      font-size: 0.9em;
+    }
+
+    .announcement-item:hover { transform: translateY(-3px); }
+
+    .announcement-item img {
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .announcement-item h3, .announcement-item h4 {
+      font-size: 1em;
+      color: #2c5aa0;
+      margin: 0.3rem 0;
+    }
+
+    .announcement-item p {
+      margin-bottom: 0.4rem;
+    }
+
+    .announcement-item ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0;
+    }
+
+    .announcement-item ul li {
+      margin-bottom: 0.3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0.2rem 0.2rem 0 0;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85em;
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      background-color: #007bff;
+      transition: background 0.3s;
+    }
+
+    .btn:hover { background-color: #0056b3; }
+    .btn-secondary { background-color: #28a745; }
+    .btn-secondary:hover { background-color: #1e7a38; }
+
+    /* RESOURCES SECTION */
+    #resources h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 0.8rem;
+    }
+
+    .resources {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .resource-card {
+      background: white;
+      padding: 0.8rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+      font-size: 0.9em;
+    }
+
+    .resource-card:hover { transform: translateY(-3px); }
+
+    .resource-card h3 {
+      font-size: 1em;
+      color: #2c5aa0;
+      margin-bottom: 0.4rem;
+    }
+
+    .resource-card p {
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+
+    .download-btn, .view-btn {
+      display: inline-block;
+      margin: 0.2rem 0.2rem 0 0;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.85em;
+      border-radius: 4px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+    }
+
+    .download-btn { background-color: #28a745; }
+    .view-btn { background-color: #007bff; }
+
+    .download-btn:hover { background-color: #1f7d36; }
+    .view-btn:hover { background-color: #0056b3; }
+
+    /* ABOUT & CONTACT */
+    #about, #contact {
+      background: white;
+      padding: 0.8rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      margin-top: 1rem;
+      font-size: 0.9em;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 0.7rem;
+      font-size: 0.85em;
+      margin-top: 1rem;
+    }
+
+    /* BACK TO TOP BUTTON */
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    #topBtn:hover { background-color: #1e7a38; }
+
+    /* RESPONSIVE ADJUSTMENTS */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.4em; }
+      .hero h2 { font-size: 1.2em; }
+      nav a { font-size: 0.85em; }
+      .resource-card, .announcement-item { font-size: 0.85em; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <img src="https://vectorflags.s3.amazonaws.com/flags/ug-circle-01.png" alt="Uganda Flag">
+      Uganda Health Services Integration Resource Hub
+    </h1>
+    <p>Empowering Health Workers for Sustainable, Integrated Care</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#announcements">Announcements</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <h2>Welcome to the Integrated Health Services Hub</h2>
+      <p>Aligned with the Ministry of Health’s vision for sustainability and Universal Health Coverage (UHC), this hub equips Ugandan health workers to advance integrated care—linking HIV, TB, NCD, and other services for efficient, patient-centered outcomes.</p>
+      <p><em>Built for frontline heroes: download, read, and transform care delivery today.</em></p>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section id="announcements" class="announcements">
+      <h2>🔔 Latest Announcements</h2>
+      <div class="announcement-grid">
+        <div class="announcement-item">
+          <img src="Tooro Integration Webinar.jpg" alt="Webinar Flyer">
+          <h4>Invitation to Webinar</h4>
+          <p>All health workers are invited to attend the national webinar on integrated health services featuring experiences from Tooro Region.</p>
+        </div>
+
+        <div class="announcement-item">
+          <h3>National Webinar: Experiences from Tooro Region</h3>
+          <p><strong>Date:</strong> Wednesday, Oct 22, 2025 | <strong>Time:</strong> 8:00 AM EAT<br>
+          <strong>Presenter:</strong> Dr. Bahizi Archibald – SEC, Fort Portal RRH<br>
+          Earn CPD points! DHOs: Mobilize at least 70 health workers per district.</p>
+          <a href="https://us06web.zoom.us/j/88563151627" class="btn" target="_blank">📹 Join Zoom Webinar</a>
+          <a href="presentation-tooro-region.pdf" class="btn btn-secondary" download>📄 Download Presentation</a>
+        </div>
+
+        <div class="announcement-item">
+          <h3>Upcoming Trainings & Mentorship</h3>
+          <ul>
+            <li><a href="Final Facility Level Facilitator's Guide.pdf" target="_blank">Facility Training Guide</a></li>
+            <li><a href="Capacity Development Plan for Integration.pdf" target="_blank">Mentorship & CME Programs</a></li>
+            <li><a href="mailto:xpatt@live.com">Contact the Taskforce</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCES -->
+    <section id="resources">
+      <h2>Key Ministry of Health Resources</h2>
+      <div class="resources">
+        <div class="resource-card">
+          <h3>Standard Operating Procedures (SOPs)</h3>
+          <p>Integration SOPs for practical facility use.</p>
+          <a href="Integration SOPs.pdf" class="download-btn" download>📥 Download</a>
+          <a href="Integration SOPs.pdf" class="view-btn" target="_blank">👁️ View</a>
+        </div>
+
+        <div class="resource-card">
+          <h3>Video CMEs</h3>
+          <p>Continuing Medical Education videos on integration.</p>
+          <a href="https://www.youtube.com/@MoHUganda" class="view-btn" target="_blank">▶️ Watch</a>
+          <a href="https://www.youtube.com/@MoHUganda/playlists" class="download-btn" target="_blank">📺 Playlists</a>
+        </div>
+
+        <div class="resource-card">
+          <h3>Integration Frameworks & Plans</h3>
+          <p>MoH frameworks and guides for system integration and sustainability.</p>
+          <a href="Integration Maturity Framework 10 Jun 25.pdf" class="download-btn" download>📥 Framework</a>
+          <a href="Practical Guidance for Integration _MoH Uganda_Final Version_29.4.25_VF.pdf" class="view-btn" target="_blank">👁️ Guidance</a>
+        </div>
+
+        <div class="resource-card">
+          <h3>Uganda Clinical Guidelines 2023</h3>
+          <p>UCG 2023 – management guidelines for all health workers.</p>
+          <a href="UCG 2023.pdf" class="download-btn" download>📥 Download</a>
+          <a href="UCG 2023.pdf" class="view-btn" target="_blank">👁️ View</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About This Resource</h2>
+      <p>This site serves as a central resource for Ugandan health workers implementing the Ministry of Health’s integration roadmap. It promotes sustainability in HIV care by linking vertical programs to comprehensive Primary Health Care (PHC) delivery.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Get Involved</h2>
+      <p>For feedback or contributions, email <a href="mailto:xpatt@live.com">Xpatt</a> or WhatsApp the Integration Taskforce for Q&A and updates.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Uganda Health Services Integration Resource Hub | Powered by PMVL | In Partnership with MoH</p>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button id="topBtn" title="Back to top">↑</button>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Back to top button
+    const topBtn = document.getElementById('topBtn');
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+    topBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
 </body>
 </html>
