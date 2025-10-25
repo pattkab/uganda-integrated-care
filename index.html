@@ -466,12 +466,21 @@
                 font-size: 0.9rem;
             }
 
-            .btn-group {
-                flex-direction: column;
+            .btn, .download-btn, .view-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9em;
+                display: inline-flex;
+                min-width: auto;
+                flex: 1 1 45%;
+                margin: 0.25rem 0;
+                text-align: center;
             }
 
-            .btn {
-                min-width: 100%;
+            .btn-group {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
             }
 
             .floating-btn {
@@ -491,6 +500,10 @@
         }
 
         @media (max-width: 480px) {
+            .btn, .download-btn, .view-btn {
+                flex: 1 1 100%;
+            }
+
             header {
                 padding: 1.5rem 0.5rem;
             }
@@ -543,8 +556,8 @@
                     Join us for insights on integrated health services implementation. Earn CPD points! DHOs: Mobilize at least 70 health workers per district.</p>
                     <div class="btn-group">
                         <a href="https://us06web.zoom.us/j/88563151627?pwd=EYVa2w8RggN5kBTdhKcgcRqGy6S9ne.1" class="btn" target="_blank"><i class="fas fa-video"></i> Join Zoom Webinar</a>
-                        <small>Meeting ID: 8856315627 | Passcode: 123</small>
                     </div>
+                    <p><small>Meeting ID: 88563151627 | Passcode: 123<br>Scan QR code in poster or use link above.</small></p>
                     <div class="btn-group">
                         <a href="presentation-tooro-region.pdf" class="btn btn-secondary" download><i class="fas fa-file-pdf"></i> Download Presentation (Available Post-Event)</a>
                     </div>
